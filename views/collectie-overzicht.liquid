@@ -1,0 +1,193 @@
+{% render 'partials/head.liquid' %}
+
+
+      <a href="#" class="back-link">
+        <span aria-hidden="true">←</span> Terug
+      </a>
+      <h1 class="top-bar__title">Collectie</h1>
+   <style> /* --------- reset & base --------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body:has(article.collectie-card){
+  font-family: main, sans-serif;
+  font-size: var(--paragraph);
+  background-color: var(--light-background);
+  color: var(--dark-text);
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+ 
+  max-width: 480px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: 1200px;
+  }
+}
+
+
+/* --------- top bar --------- */
+
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: main, sans-serif;
+    font-size: var(--heading-small);
+    font-weight: 700;
+    color: var(--dark-text);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  
+
+  &__title {
+    font-family: headings, serif;
+    font-size: var(--heading-medium);
+    font-weight: 700;
+    color: var(--dark-text);
+  }
+}
+
+.top-bar_title{
+    display: flex;
+   justify-self: center;
+}
+
+/* --------- main page --------- */
+.page {
+  padding: 0.75rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1.5rem 2rem 2rem;
+    gap: 1.25rem;
+  }
+}
+
+/* --------- collectie card --------- */
+article.collectie-card {
+  background: var(--heuvel);
+  border-radius: var(--border-card);
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(.22, .8, .38, 1),
+    box-shadow 0.35s ease;
+
+  &.voedseleiland { background: var(--voedseleiland); }
+  &.sierlint      { background: var(--sierlint); }
+  &.water         { background: var(--waterplandgebied); }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 12px 32px rgba(0, 0, 0, 0.10),
+      0 3px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .collectie-card-media {
+    line-height: 0;
+
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--border-image) var(--border-image) 0 0;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  section.collectie-card-body {
+    padding: 0.75rem 1rem 1rem;
+
+    h2 {
+      font-family: headings, serif;
+      font-size: var(--heading-small);
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      font-family: main, sans-serif;
+      font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+      color: var(--dark-text);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    a.collectie-card-btn {
+      display: block;
+      width: 100%;
+      padding: 0.65rem 0;
+      background: var(--always-black);
+      color: var(--always-light);
+      font-family: main, sans-serif;
+      font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+      font-weight: 700;
+      text-align: center;
+      border-radius: var(--border-button);
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+
+      &:hover {
+        background: #333;
+        transform: scale(1.02);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+</style>
+
+    <main class="page">
+
+      <article class="collectie-card-heuvel">
+        <section class="collectie-card-media">
+          <img src="jouw-foto.jpg" alt="Na de bloei - droog bloemenveld">
+          <p>Foto van het bloemenveld na de bloei</p>
+        </section>
+        <section class="collectie-card-body">
+          <h2>Na de bloei</h2>
+          <p>Bekijk alle digitale kaarten die je hebt gespaard in het bloemenveld en lees de bijbehorende informatie over de bloem of plant terug.</p>
+          <a href="#" class="collectie-card-btn">Bekijk alle kaarten</a>
+        </section >
+      </article>
+
+      <article class="collectie-card voedseleiland">
+        <section class="collectie-card-media">
+          <img src="jouw-foto.jpg" alt="In de bloei - gele bloemen">
+          <p>Foto van het bloemenveld in de bloei</p>
+        </section>
+        <section class="collectie-card_body">
+          <h2>In de bloei</h2>
+          <p>Bekijk alle digitale kaarten die je hebt gespaard in het bloemenveld en lees de bijbehorende informatie over de bloem of plant terug.</p>
+          <a href="#" class="collectie-card_btn">Bekijk alle kaarten</a>
+        </section>
+      </article>
+
+    </main>
+
+    
+
+{% render 'partials/foot.liquid' %}
