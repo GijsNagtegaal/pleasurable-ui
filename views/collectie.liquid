@@ -163,14 +163,14 @@
 </style>
      
 
- {% for plants in plants %}
+ {% for plant in plants %}
       <article class="plant-card">
-        <h2>{{ plants.name }}</h2>
+        <h2>{{ plant.name }}</h2>
         <section>
           <img src="https://fdnd-agency.directus.app/assets/{{ plant.in_bloom }}" width="200" alt="plant">
           <p>Goede salie in de tuin</p>
         </section>
-        <a href="/collectie/{{ plants.slug }}">Meer over deze bloem</a>
+        <a href="/collectie/{{ plant.slug }}">Meer over deze bloem</a>
       </article>
     {% endfor %}
  
