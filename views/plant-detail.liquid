@@ -1,0 +1,152 @@
+{% render 'partials/head.liquid' %}
+<style>
+  body{
+    font-family: main, sans-serif;
+    font-size: var(--paragraph);
+    background-color: var(--light-background);
+    color: var(--dark-text);
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: main, sans-serif;
+    font-size: var(--heading-small);
+    font-weight: 700;
+    color: var(--dark-text);
+    text-decoration: none;
+    padding: 1.1rem 1.25rem 0;
+  }
+
+  .back-link:hover { text-decoration: underline; }
+
+  .top-bar__title {
+    font-family: headings, serif;
+    font-size: var(--heading-medium);
+    font-weight: 700;
+    color: var(--dark-text);
+    padding: 1rem 1.25rem 0;
+    display: inline;
+    margin: 0;
+  }
+
+  .page {
+    padding: 1.5rem 1rem 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  article.detail-card {
+    background: #f5f0c8;
+    border-radius: 1.5rem;
+    padding: 2rem 1.75rem 1.75rem;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  article.detail-card.voedseleiland { background: var(--voedseleiland, #d4edda); }
+  article.detail-card.heuvel        { background: var(--heuvel, #e8f5e9); }
+  article.detail-card.water         { background: var(--waterplandgebied, #d0ebf5); }
+
+  .detail-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-card__header h2 {
+    font-family: headings, serif;
+    font-size: clamp(1.4rem, 5vw, 1.7rem);
+    font-weight: 700;
+    color: var(--dark-text);
+    text-align: center;
+    margin: 0;
+  }
+
+  .detail-card__intro {
+    font-family: main, sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: var(--dark-text);
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+  }
+
+  .detail-card__eigenschappen {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .detail-card__eigenschappen p {
+    font-family: main, sans-serif;
+    font-size: clamp(0.875rem, 2vw, 0.95rem);
+    color: var(--dark-text);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .detail-card__eigenschappen p strong { font-weight: 700; }
+
+  .detail-card__footer { margin-top: 0.5rem; }
+
+  .detail-card__btn {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 0;
+    background: var(--always-black, #1a1a1a);
+    color: var(--always-light, #ffffff);
+    font-family: main, sans-serif;
+    font-size: clamp(0.875rem, 2vw, 0.95rem);
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .detail-card__btn:hover  { background: #333; transform: scale(1.02); }
+  .detail-card__btn:active { transform: scale(0.98); }
+</style>
+ 
+    <a href="#" class="back-link">
+      <span aria-hidden="true">←</span> Terug
+    </a>
+    <h1 class="top-bar__title">Plant detail</h1>
+  
+
+  <main class="page">
+
+    <article class="detail-card sierlint">
+      <header class="detail-card__header">
+        <h2>{{ plant.name }}</h2>
+        <p class="detail-card__intro">De zaadknoppen van de plant zijn goed te zien nu</p>
+      </header>
+
+      <section class="detail-card__eigenschappen" aria-label="Eigenschappen van de plant">
+        <p><strong>Ecologische rol:</strong> Insecten die in de stengels schuilen dienen als voedselbron voor vogels,</p>
+        <p><strong>Gebruik:</strong> de wortel van deze plant is vlezig en sappig en kun je rauw of gekookt eten</p>
+        <p><strong>Bodem:</strong> Inheems, oorsprong: Middellandse Zee. Populaire moestuinplant.</p>
+        <p><strong>Leuke weetjes:</strong> de zaden zijn zeer voedzaam en rijk aan het omega-6-vetzuur gammalinoleenzuur.</p>
+      </section>
+
+      <section class="detail-card__footer">
+        <a href="#" class="detail-card__btn">Afsluiten</a>
+      </section>
+    </article>
+
+  </main>
+
+    {% render 'partials/foot.liquid' %}
+
+ 
