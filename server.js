@@ -455,3 +455,15 @@ app.post('/login', async (req, res) => {
 
 app.listen(8000, () => console.log('🚀 Server started: http://localhost:8000'));
 
+
+// Start Express op, gebruik daarbij het zojuist ingestelde poortnummer op
+app.listen(app.get('port'), function () {
+  console.log(`Project draait via http://localhost:${app.get('port')}/\n\nSucces deze sprint. En maak mooie dingen! 🙂`)
+})
+
+
+
+
+
+
+
