@@ -1,0 +1,156 @@
+      <style>*, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    body {
+      font-family: main, sans-serif;
+      font-size: var(--paragraph);
+      background-color: var(--light-background);
+      color: var(--dark-text);
+      min-height: 100dvh;
+      
+    }
+ 
+    /* --------- page layout --------- */
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+ 
+    /* --------- back link --------- */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: var(--heading-small);
+      font-weight: 700;
+      color: var(--dark-text);
+      text-decoration: none;
+      margin-bottom: 1rem;
+ 
+      &::before{
+        content: "<-";
+      }
+      
+ 
+      &:hover {
+       transform: scale(1.03);
+      }
+    }
+ 
+    /* --------- page heading --------- */
+    .page-title {
+      font-family: headings, serif;
+      font-size: var(--heading-big);
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 1.5rem;
+    }
+ 
+    /* --------- card grid --------- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+ 
+      @media (min-width: 700px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+ 
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+    }
+ 
+    /* --------- plant card --------- */
+    article.plant-card {
+      background: var(--voedseleiland);
+      border-radius: var(--border-card);
+      padding: 0.75rem 0.75rem 1rem;
+      box-sizing: border-box;
+      transition:
+        transform 0.35s cubic-bezier(.22,.8,.38,1),
+        box-shadow 0.35s ease;
+ 
+      @media (min-width: 700px) {
+        padding: 1rem 1rem 1.25rem;
+      }
+ 
+      &:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow:
+          0 16px 36px rgba(60, 90, 30, 0.16),
+          0 4px 10px rgba(60, 90, 30, 0.10);
+ 
+        section img {
+          transform: scale(1.06);
+        }
+      }
+ 
+      /* zone color variants */
+      &.voedseleiland { background: var(--voedseleiland); }
+      
+ 
+      h2 {
+        
+        font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+        font-weight: 700;
+        color: var(--dark-text);
+        text-align: center;
+        margin-bottom: 0.6rem;
+        transition: color 0.3s ease;
+        line-height: 1.2;
+      }
+ 
+      section {
+        margin: 0;
+        border-radius: var(--border-image);
+        overflow: hidden;
+        line-height: 0;
+ 
+        img {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          border-radius: var(--border-image);
+          display: block;
+          transition: transform 0.45s cubic-bezier(.22,.8,.38,1);
+        }
+ 
+        p {
+          display: none;
+        }
+      }
+ 
+      a {
+        display: block;
+        width: 100%;
+        margin-top: 0.75rem;
+        padding: 0.55rem 0;
+        background: var(--always-black);
+        color: var(--always-light);
+        
+        font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+        font-weight: 700;
+        text-align: center;
+        border-radius: var(--border-button);
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: background 0.2s ease, transform 0.15s ease;
+ 
+        &:hover {
+          background: #333;
+          transform: scale(1.03);
+        }
+ 
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+</style>
