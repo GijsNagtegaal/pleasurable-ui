@@ -679,19 +679,14 @@ ul.quest {
             /* Psuedo eerste kind van het element */
             &.loading::before {
                 display: block;
-                /* Achtergrond afbeelding is een conic gradient die transparant is en de huidige kleur meeneemt  */
                 background-image: conic-gradient(transparent, currentcolor);
-                /* Snijdt het middenstuk af */
                 mask-image: radial-gradient(transparent 0 .3em, red .3em 5em);
-                /* Content moet leeg */
                 content: "";
                 border-radius: 50%;
                 width: 1em;
                 height: 1em;
                 animation-name: --wait-animation;
-                /* Animatie duur */
                 animation-duration: 1s;
-                /* Oneidig draaien */
                 animation-iteration-count: infinite;
             }
         }

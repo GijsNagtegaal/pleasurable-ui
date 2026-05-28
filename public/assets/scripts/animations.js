@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Check for persistent notifications immediately
+    
     initNotificationLogic();
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
