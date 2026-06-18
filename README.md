@@ -45,14 +45,14 @@ Van de opdrachtgever hebben wij een prototype gekregen van het design in een fig
 
 ### Pagina's
 
-  * [Homepage](https://github.com/GijsNagtegaal/pleasurable-ui/edit/main/README.md#homepage)
-  * [Veldbeheer](https://github.com/GijsNagtegaal/pleasurable-ui/edit/main/README.md#veldbeheer)
-  * [Suggestie](https://github.com/GijsNagtegaal/pleasurable-ui/edit/main/README.md#suggestie)
-  * [Account](https://github.com/GijsNagtegaal/pleasurable-ui/edit/main/README.md#account)
-  * [Veldverkenner](https://github.com/GijsNagtegaal/pleasurable-ui/edit/main/README.md#veldverkenner)
-  * [Nieuws](https://github.com/GijsNagtegaal/pleasurable-ui/edit/main/README.md#nieuwsartikel)
-  * [Nieuwsartikel](https://github.com/GijsNagtegaal/pleasurable-ui/edit/main/README.md#nieuwsartikel)
-  * [Collectie](https://github.com/GijsNagtegaal/pleasurable-ui/edit/main/README.md#collectie)
+  * [Homepage](https://github.com/GijsNagtegaal/pleasurable-ui#homepage)
+  * [Veldbeheer](https://github.com/GijsNagtegaal/pleasurable-ui#veldbeheer)
+  * [Suggestie](https://github.com/GijsNagtegaal/pleasurable-ui#suggestie)
+  * [Account](https://github.com/GijsNagtegaal/pleasurable-ui#account)
+  * [Veldverkenner](https://github.com/GijsNagtegaal/pleasurable-ui#veldverkenner)
+  * [Nieuws](https://github.com/GijsNagtegaal/pleasurable-ui#nieuws)
+  * [Nieuwsartikel](https://github.com/GijsNagtegaal/pleasurable-ui#nieuwsartikel)
+  * [Collectie]()
 
 ## Homepage
 
