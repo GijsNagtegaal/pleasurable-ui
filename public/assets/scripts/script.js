@@ -1,4 +1,4 @@
-// --- Elements Selection ---
+// Select DOM Elements
 const loaderBtn = document.querySelector('.loader');
 const allOptions = document.querySelectorAll('.options-container button');
 const memojiForm = document.getElementById('memojiForm');
@@ -10,7 +10,7 @@ const slider = document.querySelector('.donate');
 const output = document.querySelector('.current-value');
 const commentForm = document.querySelector('.comment form');
 
-// --- 1. Animation Trigger Feature ---
+// quest button loading state
 if (allOptions.length > 0) {
     const triggerAnimation = (event) => {
         const clickedBtn = event.currentTarget;
@@ -19,7 +19,7 @@ if (allOptions.length > 0) {
         if (loaderBtn) {
             loaderBtn.setAttribute('href', targetUrl);
             loaderBtn.classList.remove('shownow', 'ready');
-            void loaderBtn.offsetWidth; // Force reflow
+            void loaderBtn.offsetWidth;
             loaderBtn.classList.add('shownow');
         }
     };
@@ -29,7 +29,7 @@ if (allOptions.length > 0) {
     });
 }
 
-// --- 2. Memoji Form Feature (with View Transitions) ---
+// memoji form user can pick a memoji and it saves to the user id in the database with a patch
 if (memojiForm) {
     memojiForm.addEventListener('click', async (event) => {
         const clickedBtn = event.target.closest('.memoji-choice-btn');
@@ -51,7 +51,7 @@ if (memojiForm) {
         clickedBtn.classList.add('is-loading');
         if (loaderBtn) {
             loaderBtn.classList.remove('shownow', 'ready');
-            void loaderBtn.offsetWidth; // Force reflow
+            void loaderBtn.offsetWidth; 
             loaderBtn.classList.add('shownow');
         }
 
@@ -131,7 +131,7 @@ if (memojiForm) {
     });
 }
 
-// --- 3. Carousel / Slider Feature ---
+// carousel for cards of the activities per month
 function getActiveIndex() {
     if (!container || cards.length === 0) return 0;
     
@@ -155,6 +155,7 @@ function getActiveIndex() {
     return closestIndex;
 }
 
+// scroll snap enhancement
 function scrollToCard(index) {
     if (!container || index < 0 || index >= cards.length) return;
 
@@ -168,6 +169,7 @@ function scrollToCard(index) {
     });
 }
 
+// update button state for the cards when end is reached
 function updateButtonStates() {
     if (!container || cards.length === 0) return; 
     const currentIndex = getActiveIndex();
@@ -199,7 +201,7 @@ if (container && cards.length > 0) {
     updateButtonStates();
 }
 
-// --- 4. Donate Input Range Feature ---
+// donate input range that updates button
 if (slider && output) {
     slider.addEventListener('input', (event) => {
         output.textContent = event.target.value;
